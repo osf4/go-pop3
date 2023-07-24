@@ -16,10 +16,10 @@ var (
 	ErrUnknownCode = errors.New("pop3: unknown response code")
 )
 
-// Response represents replies sent by server
+// Response represents replies sent by the server
 type Response struct {
 	Code code
-	Text []string // Text contains lines of response
+	Text []string // Text contains lines of the response
 }
 
 // Args returns arguments on the specified line
@@ -40,7 +40,7 @@ func (r *Response) LinesFrom(n int) []string {
 	return r.Text[n-1:]
 }
 
-// JoinLines join lines of response into one string
+// JoinLines join lines of the response into one string
 //
 // Each line is separated by the CRLF pair
 func (r *Response) JoinFrom(from int) string {
